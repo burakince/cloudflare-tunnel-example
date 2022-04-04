@@ -1,0 +1,17 @@
+charts/cloudflared/files
+/values.yaml
+
+# OS files
+.DS_Store
+
+# Common backup files
+*.swp
+*.bak
+*.tmp
+*.orig
+*~
+# Various IDEs
+.project
+.idea/
+*.tmproj
+.vscode/
