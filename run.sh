@@ -25,8 +25,13 @@ fi
 
 cp ~/.cloudflared/*.json charts/cloudflared/files/
 
+ADDITIONAL_VALUES_FILE=""
+if [ -e ./values.yaml ]; then
+  ADDITIONAL_VALUES_FILE="-f values.yaml"
+fi
+
 helm upgrade --install \
   --namespace cloudflare \
-  --create-namespace \
+  --create-namespace ${ADDITIONAL_VALUES_FILE} \
   cloudflare \
   ./charts/cloudflared
