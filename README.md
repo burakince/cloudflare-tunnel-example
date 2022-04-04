@@ -20,6 +20,12 @@ cloudflared tunnel create pi-cluster
 
 ## Install cloudflare tunnel to your raspberry pi cluster by helm chart
 
+Please run `./run.sh` command and it will deploy the solution to your target Kubernetes cluster.
+
+or
+
+Pelase copy your tunnel credential to files folder and run following command.
+
 ```
 helm upgrade --install \
   --namespace cloudflare \

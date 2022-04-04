@@ -25,4 +25,8 @@ fi
 
 cp ~/.cloudflared/*.json charts/cloudflared/files/
 
-helm template --debug charts/cloudflared
+helm upgrade --install \
+  --namespace cloudflare \
+  --create-namespace \
+  cloudflare \
+  ./charts/cloudflared
