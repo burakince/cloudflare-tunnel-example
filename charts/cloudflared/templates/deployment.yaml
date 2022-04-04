@@ -37,8 +37,8 @@ spec:
             - run
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
-            - name: http
-              containerPort: 80
+            - name: active-con-stat
+              containerPort: 2000
               protocol: TCP
           livenessProbe:
             httpGet:
