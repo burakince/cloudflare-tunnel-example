@@ -1,0 +1,3 @@
+{{- range $path, $_ := .Files.Glob  "files/**.json" }}
+  Please go to the Cloudflare dashboard, navigate to the DNS tab, and create a CNAME record specifically targeting {{ trimPrefix "files/" $path | trimSuffix ".json" }}.cfargotunnel.com
+{{- end }}
