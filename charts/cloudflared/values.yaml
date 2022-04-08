@@ -2,7 +2,13 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-replicaCount: 1
+replica:
+  # This will use DaemonSet to deploy cloudflared to all nodes
+  allNodes: true
+  # If previous flag disabled, this will use Deployment to deploy cloudflared only number of following count
+  count: 1
+
+terminationGracePeriodSeconds: 30
 
 image:
   repository: burakince/cloudflared
@@ -56,8 +62,17 @@ resources: {}
   #   cpu: 100m
   #   memory: 128Mi
 
-nodeSelector: {}
+updateStrategy:
+  type: RollingUpdate
+  rollingUpdate:
+    maxUnavailable: 1
 
-tolerations: []
+nodeSelector:
+  kubernetes.io/os: linux
+
+tolerations:
+  # Make sure cloudflared gets scheduled on all nodes.
+  - effect: NoSchedule
+    operator: Exists
 
 affinity: {}
