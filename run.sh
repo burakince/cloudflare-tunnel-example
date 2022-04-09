@@ -19,7 +19,7 @@ if [ -e ~/.cloudflared/cert.pem ]; then
 fi
 
 if compgen -G "~/.cloudflared/*.json" > /dev/null; then
-  echo "Tunnel UUID credential does no exist. Please use with 'cloudflared tunnel login' command. And create a tunnel e.g. 'cloudflared tunnel create pi-cluster'"
+  echo "Tunnel UUID credential does not exist. Please use 'cloudflared tunnel login' command and create a tunnel with create command. e.g. 'cloudflared tunnel create pi-cluster'"
   exit
 fi
 
