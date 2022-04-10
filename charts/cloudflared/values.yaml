@@ -45,7 +45,7 @@ tunnelName: ""
 
 ### Set up custom ingress rules here
 ingress:
-  - hostname: example.com
+  - hostname: example.com # or "*.example.com" but you must define a CNAME record for "*" to your tunnel
     service: http://traefik.kube-system.svc.cluster.local:80
 
   - service: http_status:404
