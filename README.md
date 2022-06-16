@@ -8,7 +8,7 @@
 brew update && brew install cloudflared
 ```
 
-## Login to CLoudflare and Create a Tunnel
+## Login to Cloudflare and Create a Tunnel
 
 ```
 cloudflared tunnel login
@@ -32,4 +32,19 @@ helm upgrade --install \
   --create-namespace \
   cloudflare \
   ./charts/cloudflared
+```
+
+You can also have a `values.yaml` flie like below and keep your settings in it. All `/values.yaml` file changes ignored in this repository.
+
+```
+replica:
+  allNodes: true
+
+tunnelName: "pi-cluster"
+
+ingress:
+  - hostname: "*.example.com"
+    service: http://traefik.kube-system.svc.cluster.local:80
+
+  - service: http_status:404
 ```
