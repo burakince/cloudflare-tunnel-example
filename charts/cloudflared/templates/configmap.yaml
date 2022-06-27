@@ -5,11 +5,24 @@ metadata:
 data:
   config.yaml: |
 
-    tunnel: {{ required "A valid .Values.tunnelName entry required!" .Values.tunnelName }}
+    tunnel: {{ required "A valid .Values.tunnelConfig.name entry required!" .Values.tunnelConfig.name }}
     credentials-file: /etc/cloudflared/creds/credentials.json
 
-    metrics: 0.0.0.0:2000
-
-    no-autoupdate: true
-
     ingress: {{ toYaml .Values.ingress | nindent 6 }}
+
+    metrics: 0.0.0.0:2000
+    metrics-update-freq: {{ .Values.tunnelConfig.metricsUpdateFrequency }}
+
+    autoupdate-freq: {{ .Values.tunnelConfig.autoUpdateFrequency }}
+    no-autoupdate: {{ .Values.tunnelConfig.noAutoUpdate }}
+
+    grace-period: {{ .Values.tunnelConfig.gracePeriod }}
+
+    retries: {{ .Values.tunnelConfig.retries }}
+
+    # auto, http2, h2mux, quic
+    protocol: {{ .Values.tunnelConfig.protocol }}
+
+    # info, warn, error, fatal, panic
+    loglevel: {{ .Values.tunnelConfig.logLevel }}
+    transport-loglevel: {{ .Values.tunnelConfig.transportLogLevel }}

@@ -43,6 +43,19 @@ securityContext: {}
 
 tunnelName: ""
 
+tunnelConfig:
+  name: ""
+  metricsUpdateFrequency: 5s
+  autoUpdateFrequency: 24h
+  noAutoUpdate: true
+  gracePeriod: 30s
+  retries: 5
+  # auto, http2, h2mux, quic
+  protocol: auto
+  # info, warn, error, fatal, panic
+  logLevel: info
+  transportLogLevel: warn
+
 ### Set up custom ingress rules here
 ingress:
   - hostname: example.com # or "*.example.com" but you must define a CNAME record for "*" to your DNS

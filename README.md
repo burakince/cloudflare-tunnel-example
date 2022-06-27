@@ -40,7 +40,9 @@ You can also have a `values.yaml` flie like below and keep your settings in it. 
 replica:
   allNodes: true
 
-tunnelName: "pi-cluster"
+tunnelConfig:
+  name: "pi-cluster"
+  protocol: quic
 
 ingress:
   - hostname: "*.example.com"
