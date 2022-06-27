@@ -41,8 +41,6 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
-tunnelName: ""
-
 # Please find more configuration from https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/configuration/arguments/
 tunnelConfig:
   name: ""
