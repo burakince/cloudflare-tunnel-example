@@ -43,6 +43,7 @@ securityContext: {}
 
 tunnelName: ""
 
+# Please find more configuration from https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/configuration/arguments/
 tunnelConfig:
   name: ""
   metricsUpdateFrequency: 5s
