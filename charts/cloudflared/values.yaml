@@ -13,7 +13,7 @@ terminationGracePeriodSeconds: 30
 image:
   repository: burakince/cloudflared
   pullPolicy: IfNotPresent
-  tag: 2022.10.2
+  tag: 2022.10.3
 
 imagePullSecrets: []
 nameOverride: ""
