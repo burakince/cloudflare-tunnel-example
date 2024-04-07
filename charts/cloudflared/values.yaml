@@ -54,6 +54,8 @@ tunnelConfig:
   # info, warn, error, fatal, panic
   logLevel: info
   transportLogLevel: warn
+  connectTimeout: 30s
+  warpRouting: false
 
 ### Set up custom ingress rules here
 ingress:

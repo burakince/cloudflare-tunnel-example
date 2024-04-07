@@ -7,6 +7,12 @@ data:
 
     tunnel: {{ required "A valid .Values.tunnelConfig.name entry required!" .Values.tunnelConfig.name }}
     credentials-file: /etc/cloudflared/creds/credentials.json
+    originRequest:
+      connectTimeout: {{ .Values.tunnelConfig.connectTimeout }}
+{{- if .Values.tunnelConfig.warpRouting }}
+    warp-routing:
+      enabled: true
+{{- end }}
 
     ingress: {{ toYaml .Values.ingress | nindent 6 }}
 
